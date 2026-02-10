@@ -327,6 +327,8 @@
     width: 210px;
     height: 480px;
     bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .stem {
@@ -362,7 +364,10 @@
 
   .feeling-form {
     width: 90%;
+    max-width: 420px;
     padding: 30px 25px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .feeling-form h2 {
@@ -389,6 +394,8 @@
     width: 180px;
     height: 400px;
     bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .stem {
@@ -424,7 +431,10 @@
 
   .feeling-form {
     width: 85%;
+    max-width: 320px;
     padding: 25px 20px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .feeling-form h2 {

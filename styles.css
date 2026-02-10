@@ -1252,23 +1252,23 @@ body::before {
   }
 
   .envelope-flap {
-    border-left: 175px solid transparent;
-    border-right: 175px solid transparent;
-    border-top: 120px solid #5dade2;
+    border-left: 165px solid transparent;
+    border-right: 165px solid transparent;
+    border-top: 115px solid #5dade2;
     border-radius: 12px 12px 0 0;
   }
 
   .envelope-flap::after {
-    top: -120px;
-    height: 120px;
+    top: -115px;
+    height: 115px;
   }
 
   .envelope-flap::before {
-    top: -120px;
-    left: -175px;
-    border-left: 175px solid transparent;
-    border-right: 175px solid transparent;
-    border-top: 120px solid rgba(255, 255, 255, 0.12);
+    top: -115px;
+    left: -165px;
+    border-left: 165px solid transparent;
+    border-right: 165px solid transparent;
+    border-top: 115px solid rgba(255, 255, 255, 0.12);
   }
 
   .envelope-back .stamp {
@@ -1329,23 +1329,23 @@ body::before {
   }
 
   .envelope-flap {
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-top: 105px solid #5dade2;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 95px solid #5dade2;
     border-radius: 10px 10px 0 0;
   }
 
   .envelope-flap::after {
-    top: -105px;
-    height: 105px;
+    top: -95px;
+    height: 95px;
   }
 
   .envelope-flap::before {
-    top: -105px;
-    left: -150px;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-top: 105px solid rgba(255, 255, 255, 0.12);
+    top: -95px;
+    left: -140px;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 95px solid rgba(255, 255, 255, 0.12);
   }
 
   .envelope-back .stamp {
