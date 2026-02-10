@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💙 Happy Valentine's Day 💙</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="flower-scene.css?v=13" />
+  </head>
+
+  <body>
+    <!-- Audio Elements -->
+    <audio id="bgMusic1" loop>
+      <source src="lagu/song1.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="bgMusic2" loop>
+      <source src="lagu/song2.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Envelope Opening Animation -->
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope" id="envelope">
+        <div class="envelope-back">
+          <div class="stamp">💙</div>
+          <div class="heart-watermark">💙</div>
+        </div>
+        <div class="envelope-letter">
+          <div class="envelope-letter-emoji">💙</div>
+          <div class="envelope-letter-text">untuk kamu</div>
+        </div>
+        <div class="envelope-front"></div>
+        <div class="envelope-to">to: biru 💙</div>
+        <div class="envelope-flap">
+          <div class="flap-text">💙</div>
+        </div>
+      </div>
+      <div class="envelope-instruction">klik untuk membuka 💙</div>
+    </div>
+
+    <!-- Floating decorative doodles -->
+    <div class="floating-doodle">💙</div>
+    <div class="floating-doodle">💕</div>
+    <div class="floating-doodle">✨</div>
+    <div class="floating-doodle">💖</div>
+
+    <div id="app">
+      <div id="canvas-container"></div>
+
+      <div id="content" style="display: none">
+        <!-- Step 1: Initial Reveal -->
+        <div class="step active" id="step1" onclick="showStep(2)">
+          <img
+            src="gambar dan gif/deg deg an.gif"
+            class="slide-image"
+            alt="Heart Animation"
+          />
+          <div class="emoji heart-beat">💙</div>
+          <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gradient">
+            heyy makasii udaa mau bukaa
+          </h1>
+          <p class="text-xl text-gray-700 mb-8">
+            akuuu adaa sesuatuu buatt kamuuuu.....
+          </p>
+          <p class="text-sm text-gray-500 mt-4">✨ Klik untuk lanjut ✨</p>
+        </div>
+
+        <!-- Step 2: Valentine Message with Bunga -->
+        <div class="step" id="step2" onclick="showStep(3)">
+          <img src="gambar dan gif/bunga.jpg" class="slide-image" alt="Bunga" />
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            happy valentine's day! 💙
+          </h2>
+          <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            happy valentine buat kamuuu, semogaa kamuu selalu senyumm<br />
+            akuu senengg liatt kamu senyumm, liat kamuu bahagiaaa 💫
+          </p>
+          <p class="text-sm text-gray-500 mt-4">✨ klik untuk lanjut ✨</p>
+        </div>
+
+        <!-- Step 3: Terpesona -->
+        <div
+          class="step"
+          id="step3"
+          onclick="
+            currentStep = 4;
+            showStep(currentStep);
+          "
+          style="cursor: pointer"
+        >
+          <img
+            src="gambar dan gif/terpesona.jpg"
+            class="slide-image"
+            alt="Terpesona"
+          />
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            kamuu ituuuu.... ✨
+          </h2>
+          <p
+            class="text-xl text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed"
+          >
+            kamu cantikkk, kamuu baikk, dan yang paling pentingg kamu cinta
+            Tuhan, gak pedulii orang lain bilangg apaa kamu harus jadi diri
+            sendirii, semuaa tentang kamuu pantes buat di rayainnn 😊<br />
+            mungkin duniaa jahatt tapi selalu inget Tuhan Yesus ituu baikk dia
+            sayangg sama kamuu samaa kayak akuu jugaa 💙<br />
+            aku sukaa kamuu yang sederhana ituuu 🌟
+          </p>
+          <p class="text-sm text-gray-500 mt-4">✨ Klik untuk lanjut ✨</p>
+        </div>
+
+        <!-- Step 4: Mwah Kiss -->
+        <div
+          class="step"
+          id="step4"
+          onclick="
+            currentStep = 5;
+            showStep(currentStep);
+          "
+          style="cursor: pointer"
+        >
+          <img src="gambar dan gif/mwah.jpg" class="slide-image" alt="Mwah" />
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            inget gaa?? Yesaya 49:16
+          </h2>
+          <p
+            class="text-xl text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed"
+          >
+            Lihat, Aku telah melukiskan engkau di telapak tangan-Ku;
+            tembok-tembokmu tetap di ruang mataku 😘<br />
+            itu bener tauuu cobaa liat ajaa kalo gaa percaya 💝<br />
+            ada huruf apa di telapak tangann kuu ✨
+          </p>
+          <p class="text-sm text-gray-500 mt-4">✨ Klik untuk lanjut ✨</p>
+        </div>
+
+        <!-- Step 5: Cium -->
+        <div
+          class="step"
+          id="step5"
+          onclick="
+            currentStep = 6;
+            showStep(currentStep);
+          "
+          style="cursor: pointer"
+        >
+          <img src="gambar dan gif/cium.jpg" class="slide-image" alt="Cium" />
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            akuu bersyukurrr bangettt 😘
+          </h2>
+          <p
+            class="text-xl text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed"
+          >
+            aku bersyukur tiapp malemm Tuhan ingetin aku untuk selalu doa in
+            kamuu setelahh doa in keluargakuu akuu pastii ceritain kamu sama
+            Tuhan Yesus 💓<br />
+            btw coklatnyaa menyusulll heheee 🎁<br />
+            makasiii Tuhan Yesus dan makasii kamuu 🌈
+          </p>
+          <p class="text-sm text-gray-500 mt-4">✨ Klik untuk lanjut ✨</p>
+        </div>
+
+        <!-- Step 6: Final Wish -->
+        <div class="step" id="step6">
+          <div class="emoji">💝</div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">
+            untuk kamu... 💙
+          </h2>
+          <p
+            class="text-xl text-gray-700 mb-6 max-w-2xl mx-auto leading-relaxed"
+          >
+            kamu adalah
+            <span class="font-bold text-blue-600">biru</span>
+            yang selalu muncull di pikiran kuu ⭐<br />
+            setiap hari rasanyaa kayak seruu banget
+            <span class="font-bold text-blue-600">kalo liatt kamuuu</span>!
+            🎁<br />
+            terimakasiii
+            <span class="font-bold text-blue-600"
+              >kamuu biruu yang selaluu ku langitkann</span
+            >! 💙
+          </p>
+          <p class="text-2xl font-bold text-blue-600 mb-8">
+            happy valentine's day! 💙✨
+          </p>
+          <button class="btn" id="confetti-btn">💙</button>
+          <p class="mt-10 text-gray-500 text-sm">
+            made with 💙 for someone special
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay Hitam untuk Transisi -->
+    <div class="flower-overlay" id="flowerOverlay"></div>
+
+    <!-- Scene Bunga dengan Interaksi -->
+    <div class="flower-scene" id="flowerScene">
+      <div class="garden">
+        <!-- Bunga Utama -->
+        <div class="main-flower">
+          <!-- Batang/Stem -->
+          <div class="stem"></div>
+
+          <!-- Kepala Bunga -->
+          <div class="flower-head">
+            <!-- 8 Kelopak -->
+            <div class="petal" style="--i: 0"></div>
+            <div class="petal" style="--i: 1"></div>
+            <div class="petal" style="--i: 2"></div>
+            <div class="petal" style="--i: 3"></div>
+            <div class="petal" style="--i: 4"></div>
+            <div class="petal" style="--i: 5"></div>
+            <div class="petal" style="--i: 6"></div>
+            <div class="petal" style="--i: 7"></div>
+
+            <!-- Center Bunga -->
+            <div class="flower-center">
+              <div class="center-inner"></div>
+
+              <!-- Serbuk Sari -->
+              <div class="pollen-container">
+                <div
+                  class="pollen"
+                  style="--x: 30px; --y: -25px; --delay: 0s"
+                ></div>
+                <div
+                  class="pollen"
+                  style="--x: -30px; --y: -25px; --delay: 0.3s"
+                ></div>
+                <div
+                  class="pollen"
+                  style="--x: 25px; --y: 15px; --delay: 0.6s"
+                ></div>
+                <div
+                  class="pollen"
+                  style="--x: -25px; --y: 15px; --delay: 0.9s"
+                ></div>
+                <div
+                  class="pollen"
+                  style="--x: 0px; --y: -30px; --delay: 1.2s"
+                ></div>
+                <div
+                  class="pollen"
+                  style="--x: 35px; --y: 0px; --delay: 1.5s"
+                ></div>
+                <div
+                  class="pollen"
+                  style="--x: -35px; --y: 0px; --delay: 1.8s"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Perasaan -->
+        <div class="feeling-form" id="feelingForm">
+          <h2>✨gimana perasaanmuu sekarangg??✨</h2>
+          <textarea
+            id="feelingText"
+            placeholder="Tuliskan apa yang kamu rasakan sekarang..."
+            rows="5"
+          ></textarea>
+          <button class="btn-send" id="btnSend">📤 kirim</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="galleryModal" onclick="closeGallery()">
+      <span class="gallery-close">&times;</span>
+      <button
+        class="gallery-nav prev"
+        onclick="
+          event.stopPropagation();
+          prevImage();
+        "
+      >
+        &#10094;
+      </button>
+      <div class="gallery-content">
+        <img src="" alt="Gallery Image" id="galleryImage" />
+        <div class="gallery-caption" id="galleryCaption"></div>
+      </div>
+      <button
+        class="gallery-nav next"
+        onclick="
+          event.stopPropagation();
+          nextImage();
+        "
+      >
+        &#10095;
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
