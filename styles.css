@@ -1249,26 +1249,28 @@ body::before {
     width: 90%;
     max-width: 350px;
     height: 245px;
+    --flap-width: 155px;
+    --flap-height: 108px;
   }
 
   .envelope-flap {
-    border-left: 165px solid transparent;
-    border-right: 165px solid transparent;
-    border-top: 115px solid #5dade2;
+    border-left: var(--flap-width) solid transparent;
+    border-right: var(--flap-width) solid transparent;
+    border-top: var(--flap-height) solid #5dade2;
     border-radius: 12px 12px 0 0;
   }
 
   .envelope-flap::after {
-    top: -115px;
-    height: 115px;
+    top: calc(var(--flap-height) * -1);
+    height: var(--flap-height);
   }
 
   .envelope-flap::before {
-    top: -115px;
-    left: -165px;
-    border-left: 165px solid transparent;
-    border-right: 165px solid transparent;
-    border-top: 115px solid rgba(255, 255, 255, 0.12);
+    top: calc(var(--flap-height) * -1);
+    left: calc(var(--flap-width) * -1);
+    border-left: var(--flap-width) solid transparent;
+    border-right: var(--flap-width) solid transparent;
+    border-top: var(--flap-height) solid rgba(255, 255, 255, 0.12);
   }
 
   .envelope-back .stamp {
@@ -1329,23 +1331,23 @@ body::before {
   }
 
   .envelope-flap {
-    border-left: 140px solid transparent;
-    border-right: 140px solid transparent;
-    border-top: 95px solid #5dade2;
+    border-left: 148px solid transparent !important;
+    border-right: 148px solid transparent !important;
+    border-top: 100px solid #5dade2 !important;
     border-radius: 10px 10px 0 0;
   }
 
   .envelope-flap::after {
-    top: -95px;
-    height: 95px;
+    top: -100px !important;
+    height: 100px !important;
   }
 
   .envelope-flap::before {
-    top: -95px;
-    left: -140px;
-    border-left: 140px solid transparent;
-    border-right: 140px solid transparent;
-    border-top: 95px solid rgba(255, 255, 255, 0.12);
+    top: -100px !important;
+    left: -148px !important;
+    border-left: 148px solid transparent !important;
+    border-right: 148px solid transparent !important;
+    border-top: 100px solid rgba(255, 255, 255, 0.12) !important;
   }
 
   .envelope-back .stamp {
@@ -1422,6 +1424,8 @@ body::before {
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   filter: drop-shadow(0 35px 70px rgba(41, 128, 185, 0.45));
   perspective: 1000px;
+  --flap-width: 225px;
+  --flap-height: 145px;
 }
 
 .envelope:hover {
@@ -1591,9 +1595,9 @@ body::before {
   left: 50%;
   width: 0;
   height: 0;
-  border-left: 225px solid transparent;
-  border-right: 225px solid transparent;
-  border-top: 145px solid #5dade2;
+  border-left: var(--flap-width) solid transparent;
+  border-right: var(--flap-width) solid transparent;
+  border-top: var(--flap-height) solid #5dade2;
   border-radius: 15px 15px 0 0;
   transform: translateX(-50%);
   transform-origin: 50% 0%;
@@ -1613,7 +1617,7 @@ body::before {
   left: 50%;
   transform: translateX(-50%);
   width: 3px;
-  height: 145px;
+  height: var(--flap-height);
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.15) 0%,
@@ -1629,13 +1633,13 @@ body::before {
 .envelope-flap::before {
   content: "";
   position: absolute;
-  top: -145px;
-  left: -225px;
+  top: calc(var(--flap-height) * -1);
+  left: calc(var(--flap-width) * -1);
   width: 0;
   height: 0;
-  border-left: 225px solid transparent;
-  border-right: 225px solid transparent;
-  border-top: 145px solid rgba(255, 255, 255, 0.12);
+  border-left: var(--flap-width) solid transparent;
+  border-right: var(--flap-width) solid transparent;
+  border-top: var(--flap-height) solid rgba(255, 255, 255, 0.12);
   clip-path: polygon(45% 0%, 50% 35%, 55% 0%);
 }
 

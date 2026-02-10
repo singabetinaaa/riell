@@ -393,7 +393,7 @@
   .main-flower {
     width: 180px;
     height: 400px;
-    bottom: 80px;
+    bottom: 200px !important;
     left: 50%;
     transform: translateX(-50%);
   }
