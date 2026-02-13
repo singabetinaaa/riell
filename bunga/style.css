@@ -156,6 +156,83 @@ body {
   }
 }
 
+/* Valentine Message */
+.valentine-message {
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 100;
+  opacity: 0;
+  animation: fadeInMessage 2s 1s forwards;
+}
+
+@keyframes fadeInMessage {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.valentine-text {
+  font-size: 3.5em;
+  font-family: "Pacifico", "Comic Neue", cursive;
+  background: linear-gradient(135deg, #ff6b9d 0%, #ffc3d5 50%, #ff6b9d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 20px rgba(255, 107, 157, 0.8),
+    0 0 40px rgba(255, 107, 157, 0.5),
+    0 4px 20px rgba(255, 107, 157, 0.4);
+  filter: drop-shadow(0 0 15px rgba(255, 195, 213, 0.8));
+  margin: 0;
+  animation: glowValentine 3s ease-in-out infinite;
+  letter-spacing: 2px;
+}
+
+@keyframes glowValentine {
+  0%,
+  100% {
+    text-shadow:
+      0 0 20px rgba(255, 107, 157, 0.8),
+      0 0 40px rgba(255, 107, 157, 0.5),
+      0 4px 20px rgba(255, 107, 157, 0.4);
+  }
+  50% {
+    text-shadow:
+      0 0 30px rgba(255, 107, 157, 1),
+      0 0 60px rgba(255, 107, 157, 0.7),
+      0 4px 30px rgba(255, 107, 157, 0.6);
+  }
+}
+
+.valentine-subtitle {
+  font-size: 1.5em;
+  font-family: "Comic Neue", cursive;
+  color: #ffc3d5;
+  margin: 10px 0 0 0;
+  text-shadow:
+    0 0 10px rgba(255, 195, 213, 0.6),
+    0 2px 10px rgba(255, 107, 157, 0.4);
+  animation: floatSubtitle 2s ease-in-out infinite;
+}
+
+@keyframes floatSubtitle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 .night {
   position: fixed;
   left: 50%;
@@ -1319,6 +1396,18 @@ body {
 
 /* Tablet - iPad (768px and below) */
 @media screen and (max-width: 768px) {
+  .valentine-text {
+    font-size: 2.5em;
+  }
+
+  .valentine-subtitle {
+    font-size: 1.2em;
+  }
+
+  .valentine-message {
+    top: 5%;
+  }
+
   .question-text {
     font-size: 2.2em;
     padding: 0 20px;
@@ -1342,11 +1431,24 @@ body {
 
   .flowers {
     transform: scale(0.9);
+    margin-bottom: 10vh;
   }
 }
 
 /* Mobile Landscape (667px and below) */
 @media screen and (max-width: 667px) {
+  .valentine-text {
+    font-size: 2em;
+  }
+
+  .valentine-subtitle {
+    font-size: 1em;
+  }
+
+  .valentine-message {
+    top: 4%;
+  }
+
   .question-text {
     font-size: 1.8em;
     padding: 0 15px;
@@ -1367,11 +1469,25 @@ body {
 
   .flowers {
     transform: scale(0.8);
+    margin-bottom: 15vh;
   }
 }
 
 /* Mobile Portrait (480px and below) */
 @media screen and (max-width: 480px) {
+  .valentine-text {
+    font-size: 1.8em;
+    letter-spacing: 1px;
+  }
+
+  .valentine-subtitle {
+    font-size: 0.9em;
+  }
+
+  .valentine-message {
+    top: 3%;
+  }
+
   .question-text {
     font-size: 1.5em;
     padding: 0 10px;
@@ -1400,6 +1516,7 @@ body {
 
   .flowers {
     transform: scale(0.7);
+    margin-bottom: 20vh;
   }
 
   body {
@@ -1409,6 +1526,19 @@ body {
 
 /* Extra Small Mobile (360px and below) */
 @media screen and (max-width: 360px) {
+  .valentine-text {
+    font-size: 1.5em;
+    letter-spacing: 0.5px;
+  }
+
+  .valentine-subtitle {
+    font-size: 0.85em;
+  }
+
+  .valentine-message {
+    top: 2%;
+  }
+
   .question-text {
     font-size: 1.2em;
     padding: 0 10px;
@@ -1430,11 +1560,25 @@ body {
 
   .flowers {
     transform: scale(0.6);
+    margin-bottom: 25vh;
   }
 }
 
 /* Very Small Screens (320px) */
 @media screen and (max-width: 320px) {
+  .valentine-text {
+    font-size: 1.2em;
+    letter-spacing: 0px;
+  }
+
+  .valentine-subtitle {
+    font-size: 0.75em;
+  }
+
+  .valentine-message {
+    top: 2%;
+  }
+
   .question-text {
     font-size: 1em;
   }
@@ -1450,6 +1594,7 @@ body {
 
   .flowers {
     transform: scale(0.55);
+    margin-bottom: 30vh;
   }
 }
 
