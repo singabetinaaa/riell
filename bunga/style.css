@@ -1476,12 +1476,12 @@ body {
 /* Mobile Portrait (480px and below) */
 @media screen and (max-width: 480px) {
   .valentine-text {
-    font-size: 1.8em;
+    font-size: 2.5em;
     letter-spacing: 1px;
   }
 
   .valentine-subtitle {
-    font-size: 0.9em;
+    font-size: 1.3em;
   }
 
   .valentine-message {
@@ -1527,12 +1527,12 @@ body {
 /* Extra Small Mobile (360px and below) */
 @media screen and (max-width: 360px) {
   .valentine-text {
-    font-size: 1.5em;
+    font-size: 2em;
     letter-spacing: 0.5px;
   }
 
   .valentine-subtitle {
-    font-size: 0.85em;
+    font-size: 1.1em;
   }
 
   .valentine-message {
@@ -1567,12 +1567,12 @@ body {
 /* Very Small Screens (320px) */
 @media screen and (max-width: 320px) {
   .valentine-text {
-    font-size: 1.2em;
+    font-size: 1.6em;
     letter-spacing: 0px;
   }
 
   .valentine-subtitle {
-    font-size: 0.75em;
+    font-size: 0.95em;
   }
 
   .valentine-message {
