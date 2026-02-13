@@ -1314,3 +1314,174 @@ body {
 .not-loaded * {
   animation-play-state: paused !important;
 }
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet - iPad (768px and below) */
+@media screen and (max-width: 768px) {
+  .question-text {
+    font-size: 2.2em;
+    padding: 0 20px;
+  }
+
+  .buttons-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .choice-button {
+    padding: 18px 35px;
+    font-size: 1.2em;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .flower {
+    transform: scale(0.8);
+  }
+
+  .flowers {
+    transform: scale(0.9);
+  }
+}
+
+/* Mobile Landscape (667px and below) */
+@media screen and (max-width: 667px) {
+  .question-text {
+    font-size: 1.8em;
+    padding: 0 15px;
+  }
+
+  .question-container {
+    gap: 30px;
+  }
+
+  .choice-button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+  }
+
+  .flower {
+    transform: scale(0.7);
+  }
+
+  .flowers {
+    transform: scale(0.8);
+  }
+}
+
+/* Mobile Portrait (480px and below) */
+@media screen and (max-width: 480px) {
+  .question-text {
+    font-size: 1.5em;
+    padding: 0 10px;
+  }
+
+  .question-container {
+    gap: 25px;
+  }
+
+  .buttons-wrapper {
+    gap: 15px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .choice-button {
+    padding: 12px 25px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .flower {
+    transform: scale(0.6);
+  }
+
+  .flowers {
+    transform: scale(0.7);
+  }
+
+  body {
+    align-items: center;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media screen and (max-width: 360px) {
+  .question-text {
+    font-size: 1.2em;
+    padding: 0 10px;
+  }
+
+  .question-container {
+    gap: 20px;
+  }
+
+  .choice-button {
+    padding: 10px 20px;
+    font-size: 0.95em;
+    border-radius: 40px;
+  }
+
+  .flower {
+    transform: scale(0.5);
+  }
+
+  .flowers {
+    transform: scale(0.6);
+  }
+}
+
+/* Very Small Screens (320px) */
+@media screen and (max-width: 320px) {
+  .question-text {
+    font-size: 1em;
+  }
+
+  .choice-button {
+    padding: 8px 18px;
+    font-size: 0.9em;
+  }
+
+  .flower {
+    transform: scale(0.45);
+  }
+
+  .flowers {
+    transform: scale(0.55);
+  }
+}
+
+/* Landscape Orientation Adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .question-text {
+    font-size: 1.3em;
+  }
+
+  .question-container {
+    gap: 15px;
+  }
+
+  .buttons-wrapper {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .choice-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .flower {
+    transform: scale(0.5);
+  }
+
+  .flowers {
+    transform: scale(0.6);
+  }
+
+  body {
+    align-items: center;
+  }
+}
