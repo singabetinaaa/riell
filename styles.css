@@ -219,6 +219,112 @@ body::before {
   transform: translateY(-2px) scale(0.98);
 }
 
+/* Special Button Styles */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.button-hint {
+  font-size: 1.4em;
+  background: linear-gradient(135deg, #4fc3f7, #29b6f6, #87ceeb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  animation: bounce-hint 2s ease-in-out infinite;
+  text-shadow: 0 2px 15px rgba(79, 195, 247, 0.6);
+  margin-top: 20px;
+  filter: drop-shadow(0 0 10px rgba(135, 206, 250, 0.5));
+  letter-spacing: 1px;
+}
+
+@keyframes bounce-hint {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.05);
+  }
+}
+
+.special-btn {
+  position: relative;
+  padding: 18px 45px;
+  font-size: 1.3em;
+  animation: pulse-glow 2s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 12px 30px rgba(100, 149, 237, 0.4),
+      0 0 20px rgba(135, 206, 250, 0.3),
+      0 0 40px rgba(79, 195, 247, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 15px 40px rgba(100, 149, 237, 0.6),
+      0 0 30px rgba(135, 206, 250, 0.5),
+      0 0 60px rgba(79, 195, 247, 0.4);
+    transform: scale(1.05);
+  }
+}
+
+.btn-icon {
+  font-size: 1.4em;
+  display: inline-block;
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.btn-text {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.special-btn:hover {
+  transform: translateY(-8px) scale(1.1) rotate(-2deg);
+  animation: none;
+}
+
+.special-btn:hover .btn-icon {
+  animation: spin-heart 0.6s ease-in-out;
+}
+
+@keyframes spin-heart {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
 .btn-secondary {
   background: linear-gradient(135deg, #81d4fa 0%, #4fc3f7 100%);
   box-shadow: 0 10px 30px rgba(135, 206, 250, 0.4);
@@ -603,11 +709,12 @@ body::before {
 /* Decorative floating hearts */
 .floating-doodle {
   position: fixed;
-  font-size: 30px;
+  font-size: 40px;
   animation: float-doodle 8s ease-in-out infinite;
   pointer-events: none;
   z-index: 5;
-  opacity: 0.6;
+  opacity: 0.8;
+  filter: drop-shadow(0 2px 8px rgba(135, 206, 250, 0.4));
 }
 
 @keyframes float-doodle {
@@ -628,26 +735,82 @@ body::before {
 
 .floating-doodle:nth-child(1) {
   top: 10%;
-  left: 5%;
-  animation-delay: 0s;
 }
 
 .floating-doodle:nth-child(2) {
-  top: 20%;
-  right: 8%;
-  animation-delay: 1s;
+  top: 15%;
 }
 
 .floating-doodle:nth-child(3) {
-  bottom: 15%;
-  left: 10%;
-  animation-delay: 2s;
+  top: 8%;
 }
 
 .floating-doodle:nth-child(4) {
+  bottom: 20%;
+}
+
+.floating-doodle:nth-child(5) {
+  top: 25%;
+}
+
+.floating-doodle:nth-child(6) {
+  top: 12%;
+}
+
+.floating-doodle:nth-child(7) {
+  bottom: 15%;
+}
+
+.floating-doodle:nth-child(8) {
+  top: 18%;
+}
+
+.floating-doodle:nth-child(9) {
   bottom: 25%;
-  right: 5%;
-  animation-delay: 3s;
+}
+
+.floating-doodle:nth-child(10) {
+  top: 22%;
+}
+
+.floating-doodle:nth-child(11) {
+  bottom: 18%;
+}
+
+.floating-doodle:nth-child(12) {
+  top: 30%;
+}
+
+.floating-doodle:nth-child(13) {
+  bottom: 30%;
+}
+
+.floating-doodle:nth-child(14) {
+  top: 28%;
+}
+
+.floating-doodle:nth-child(15) {
+  bottom: 12%;
+}
+
+.floating-doodle:nth-child(16) {
+  top: 35%;
+}
+
+.floating-doodle:nth-child(17) {
+  bottom: 22%;
+}
+
+.floating-doodle:nth-child(18) {
+  top: 32%;
+}
+
+.floating-doodle:nth-child(19) {
+  bottom: 28%;
+}
+
+.floating-doodle:nth-child(20) {
+  top: 40%;
 }
 
 /* Enhanced text styles */
@@ -1253,26 +1416,6 @@ body::before {
     --flap-height: 108px;
   }
 
-  .envelope-flap {
-    border-left: var(--flap-width) solid transparent;
-    border-right: var(--flap-width) solid transparent;
-    border-top: var(--flap-height) solid #5dade2;
-    border-radius: 12px 12px 0 0;
-  }
-
-  .envelope-flap::after {
-    top: calc(var(--flap-height) * -1);
-    height: var(--flap-height);
-  }
-
-  .envelope-flap::before {
-    top: calc(var(--flap-height) * -1);
-    left: calc(var(--flap-width) * -1);
-    border-left: var(--flap-width) solid transparent;
-    border-right: var(--flap-width) solid transparent;
-    border-top: var(--flap-height) solid rgba(255, 255, 255, 0.12);
-  }
-
   .envelope-back .stamp {
     width: 40px;
     height: 40px;
@@ -1325,29 +1468,14 @@ body::before {
 /* Extra small devices */
 @media (max-width: 480px) {
   .envelope {
-    width: 95%;
-    max-width: 300px;
+    width: 300px;
     height: 210px;
+    --flap-width: 150px;
+    --flap-height: 100px;
   }
 
-  .envelope-flap {
-    border-left: 148px solid transparent !important;
-    border-right: 148px solid transparent !important;
-    border-top: 100px solid #5dade2 !important;
-    border-radius: 10px 10px 0 0;
-  }
-
-  .envelope-flap::after {
-    top: -100px !important;
-    height: 100px !important;
-  }
-
-  .envelope-flap::before {
-    top: -100px !important;
-    left: -148px !important;
-    border-left: 148px solid transparent !important;
-    border-right: 148px solid transparent !important;
-    border-top: 100px solid rgba(255, 255, 255, 0.12) !important;
+  .envelope:hover {
+    transform: scale(1.06) translateY(-10px) rotateX(2deg);
   }
 
   .envelope-back .stamp {
@@ -1387,6 +1515,33 @@ body::before {
   .btn {
     padding: 10px 25px;
     font-size: 0.95em;
+  }
+}
+
+/* Extra extra small devices (very small phones) */
+@media (max-width: 360px) {
+  .envelope {
+    width: 260px;
+    height: 182px;
+    --flap-width: 130px;
+    --flap-height: 87px;
+  }
+
+  .envelope:hover {
+    transform: scale(1.06) translateY(-10px) rotateX(2deg);
+  }
+}
+
+@media (max-width: 320px) {
+  .envelope {
+    width: 240px;
+    height: 168px;
+    --flap-width: 120px;
+    --flap-height: 80px;
+  }
+
+  .envelope:hover {
+    transform: scale(1.06) translateY(-10px) rotateX(2deg);
   }
 }
 
@@ -1613,7 +1768,7 @@ body::before {
 .envelope-flap::after {
   content: "";
   position: absolute;
-  top: -145px;
+  top: calc(var(--flap-height) * -1);
   left: 50%;
   transform: translateX(-50%);
   width: 3px;

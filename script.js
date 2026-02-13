@@ -138,17 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
     confettiBtn.addEventListener("click", () => {
       console.log("🎉 Confetti button clicked!");
 
-      // Switch to song2 when Love button is clicked
-      const bgMusic1 = document.getElementById("bgMusic1");
-      const bgMusic2 = document.getElementById("bgMusic2");
-
-      if (bgMusic1 && bgMusic2) {
-        bgMusic1.pause();
-        bgMusic1.currentTime = 0;
-        bgMusic2.currentTime = 0; // Start from beginning
-        bgMusic2.play().catch((e) => console.log("Audio play failed:", e));
-      }
-
       // Confetti meriah - gelombang pertama
       confetti({
         particleCount: 200,
@@ -231,56 +220,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }, i * 100);
       }
 
-      // After confetti, show overlay and flower scene
+      // After confetti, redirect to bunga folder
       setTimeout(() => {
-        console.log("⏰ 3 seconds passed, showing flower scene...");
-
-        // Tampilkan overlay hitam
-        const overlay = document.getElementById("flowerOverlay");
-        const flowerScene = document.getElementById("flowerScene");
-
-        if (overlay && flowerScene) {
-          overlay.classList.add("active");
-
-          // Setelah overlay fade in, tampilkan scene bunga
-          setTimeout(() => {
-            flowerScene.classList.add("active");
-          }, 1000); // Tunggu overlay selesai fade in
-        }
+        console.log("⏰ Redirecting to bunga...");
+        window.location.href = "bunga/bunga.html";
       }, 3000);
-    });
-  }
-
-  // ===== FORM KIRIM KE WHATSAPP =====
-  const btnSend = document.getElementById("btnSend");
-  const feelingText = document.getElementById("feelingText");
-
-  // Nomor WhatsApp (format: 628xxx tanpa +)
-  const whatsappNumber = "6283142453829";
-
-  if (btnSend) {
-    btnSend.addEventListener("click", function () {
-      const message = feelingText.value.trim();
-
-      if (message === "") {
-        alert("Isi dulu perasaanmu! 💙");
-        return;
-      }
-
-      // Encode message untuk URL
-      const encodedMessage = encodeURIComponent(message);
-
-      // Buka WhatsApp dengan pesan
-      const waUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-      window.open(waUrl, "_blank");
-
-      // Reset form
-      feelingText.value = "";
-
-      // Tampilkan pesan terima kasih
-      setTimeout(() => {
-        alert("Terima kasih sudah berbagi perasaanmu! 💙✨");
-      }, 500);
     });
   }
 
